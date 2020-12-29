@@ -17,8 +17,7 @@ class CreateRankingsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedTinyInteger('ranking')->default(3);
-
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

@@ -53,8 +53,8 @@ class UserRankings extends Command
 
             // Seed ranking data
             DB::insert("
-                insert into rankings (user_id, ranking, created_at, updated_at)
-                select users.id as user_id, users.ranking, now() as creted_at, now() as updated_at from users;
+                insert into rankings (user_id, ranking, created_at)
+                select users.id as user_id, users.ranking, now() as creted_at from users;
             ");
 
             // Seed latest rank
